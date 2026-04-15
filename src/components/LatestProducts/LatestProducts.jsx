@@ -4,14 +4,16 @@ import Product from '../Product/Product';
 import { Sparkles, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router'; // Import Link
 
-const LatestProducts = ({ latestProductsPromise }) => {
+const LatestProducts = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        latestProductsPromise.then(data => {
-            setProducts(data);
-        });
-    }, [latestProductsPromise]);
+        fetch('http://localhost:3000/api/recent-products')
+            .then(res => res.json())
+            .then(data => {
+                setProducts(data);
+            });
+    }, []);
 
     const containerVariants = {
         hidden: { opacity: 0 },
