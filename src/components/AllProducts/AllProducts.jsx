@@ -115,7 +115,7 @@ const AllProducts = () => {
                     key={product._id} 
                     className="group relative"
                   >
-                    <Link to={`/product/${product._id}`}>
+                    <Link to={`/productDetails/${product._id}`}>
                       <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500/30 to-violet-500/30 rounded-[2rem] blur opacity-0 group-hover:opacity-100 transition duration-500" />
                       <div className="relative h-full bg-white/5 backdrop-blur-md border border-white/10 rounded-[2rem] overflow-hidden transition-colors hover:border-white/20">
                         <Product product={product} />

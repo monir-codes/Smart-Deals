@@ -39,7 +39,7 @@ const router = createBrowserRouter([
       {
         path: `/productDetails/:id`,
         element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-        loader: ({params})=> fetch(`http://localhost:3000/products/${params.id}`)
+        loader: ({params})=> fetch(`http://localhost:3000/api/product/${params.id}`)
       },
       {
         path: 'myBids',
