@@ -29,7 +29,8 @@ const Navbar = () => {
         { name: 'All Products', path: '/allProducts' },
         ...(user ? [
             { name: 'My Products', path: '/myProducts' },
-            { name: 'My Bids', path: '/myBids' }
+            { name: 'My Bids', path: `/myBids?email=${user.email}` },
+            { name: 'Add Product', path: '/addProduct' }
         ] : [])
     ];
 
@@ -92,7 +93,7 @@ const Navbar = () => {
                         {user ? (
                             <div className="flex items-center gap-3 bg-white/5 p-1 pr-4 rounded-full border border-white/10">
                                 <div className="w-8 h-8 rounded-full overflow-hidden border border-violet-500">
-                                    <img src={user?.photoURL || "https://i.pravatar.cc/100"} alt="User" />
+                                    <img src={user?.photoURL || "https://media.istockphoto.com/id/1130884625/vector/user-member-vector-icon-for-ui-user-interface-or-profile-face-avatar-app-in-circle-design.jpg?s=612x612&w=0&k=20&c=1ky-gNHiS2iyLsUPQkxAtPBWH1BZt0PKBB1WBtxQJRE="} alt={user?.displayName || "User"} />
                                 </div>
                                 <button 
                                     onClick={handleSignOut}

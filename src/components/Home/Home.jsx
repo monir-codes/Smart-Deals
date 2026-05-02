@@ -3,7 +3,7 @@ import LatestProducts from '../LatestProducts/LatestProducts';
 import HeroSection from '../HeroSection/HeroSection';
 
 const Home = () => {
-    const latestProductsPromise = fetch("http://localhost:3000/latest-products").then(res=> res.json());
+    const latestProductsPromise = fetch("http://localhost:3000/api/recent-products").then(res=> res.json());
 
     return (
         <div>
